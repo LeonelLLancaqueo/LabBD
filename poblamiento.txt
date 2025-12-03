@@ -1,0 +1,89 @@
+JSON.SET user:1001 $ '{"user_id":1001,"email":"juan@example.com","name":"Juan Pérez","active":true,"plan":"premium","registered_at":1650000000}'
+JSON.SET user:1002 $ '{"user_id":1002,"email":"ana@example.com","name":"Ana Ruiz","active":true,"plan":"basic","registered_at":1655004500}'
+JSON.SET user:1003 $ '{"user_id":1003,"email":"carlos@example.com","name":"Carlos Mena","active":false,"plan":"free","registered_at":1641002000}'
+JSON.SET user:1004 $ '{"user_id":1004,"email":"sofia@example.com","name":"Sofía Torres","active":true,"plan":"premium","registered_at":1662003000}'
+JSON.SET user:1005 $ '{"user_id":1005,"email":"diego@example.com","name":"Diego Arce","active":true,"plan":"basic","registered_at":1668001000}'
+JSON.SET user:1006 $ '{"user_id":1006,"email":"laura@example.com","name":"Laura Neri","active":true,"plan":"basic","registered_at":1671009000}'
+JSON.SET user:1007 $ '{"user_id":1007,"email":"roberto@example.com","name":"Roberto Díaz","active":false,"plan":"free","registered_at":1623006000}'
+JSON.SET user:1008 $ '{"user_id":1008,"email":"lucia@example.com","name":"Lucía Vega","active":true,"plan":"premium","registered_at":1681005000}'
+JSON.SET user:1009 $ '{"user_id":1009,"email":"mario@example.com","name":"Mario Soto","active":true,"plan":"pro","registered_at":1689004000}'
+JSON.SET user:1010 $ '{"user_id":1010,"email":"eva@example.com","name":"Eva Ríos","active":true,"plan":"basic","registered_at":1692007000}'
+
+
+
+JSON.SET device:dev_a1 $ '{"device_id":"dev_a1","type":"mobile","os":"Android","browser":"Chrome","user_agent":"Mozilla/5.0 Mobile"}'
+JSON.SET device:dev_b2 $ '{"device_id":"dev_b2","type":"desktop","os":"Linux","browser":"Firefox","user_agent":"Mozilla/5.0 Linux"}'
+JSON.SET device:dev_c3 $ '{"device_id":"dev_c3","type":"tablet","os":"iPadOS","browser":"Safari","user_agent":"Mozilla/5.0 Safari"}'
+JSON.SET device:dev_d4 $ '{"device_id":"dev_d4","type":"mobile","os":"iOS","browser":"Safari","user_agent":"Mozilla/5.0 iPhone"}'
+JSON.SET device:dev_e5 $ '{"device_id":"dev_e5","type":"desktop","os":"Windows","browser":"Edge","user_agent":"Mozilla/5.0 Edge"}'
+JSON.SET device:dev_f6 $ '{"device_id":"dev_f6","type":"laptop","os":"macOS","browser":"Chrome","user_agent":"Mozilla/5.0 Mac"}'
+JSON.SET device:dev_g7 $ '{"device_id":"dev_g7","type":"mobile","os":"Android","browser":"Firefox","user_agent":"Mozilla/5.0 Mobile Firefox"}'
+JSON.SET device:dev_h8 $ '{"device_id":"dev_h8","type":"tablet","os":"Android","browser":"Chrome","user_agent":"Mozilla/5.0 Tablet"}'
+JSON.SET device:dev_i9 $ '{"device_id":"dev_i9","type":"desktop","os":"Ubuntu","browser":"Brave","user_agent":"Mozilla/5.0 Brave"}'
+JSON.SET device:dev_j10 $ '{"device_id":"dev_j10","type":"laptop","os":"Windows","browser":"Chrome","user_agent":"Mozilla/5.0 WinChrome"}'
+
+
+
+JSON.SET session:sess_001 $ '{"session_id":"sess_001","user_id":1001,"device_id":"dev_a1","ip":"10.0.0.1","created_at":1717091000,"last_seen":1717092000,"expires_in":3600,"payload":{"cart":[],"roles":["admin"]}}'
+EXPIRE session:sess_001 3600
+
+JSON.SET session:sess_002 $ '{"session_id":"sess_002","user_id":1002,"device_id":"dev_b2","ip":"10.0.0.2","created_at":1717093000,"last_seen":1717093500,"expires_in":3600,"payload":{"cart":[],"roles":["user"]}}'
+EXPIRE session:sess_002 3600
+
+JSON.SET session:sess_003 $ '{"session_id":"sess_003","user_id":1001,"device_id":"dev_c3","ip":"10.0.0.3","created_at":1717093200,"last_seen":1717093600,"expires_in":3600,"payload":{"cart":[],"roles":["editor"]}}'
+EXPIRE session:sess_003 3600
+
+JSON.SET session:sess_004 $ '{"session_id":"sess_004","user_id":1003,"device_id":"dev_d4","ip":"10.0.0.4","created_at":1717093300,"last_seen":1717093800,"expires_in":3600,"payload":{"cart":[],"roles":["user"]}}'
+EXPIRE session:sess_004 3600
+
+JSON.SET session:sess_005 $ '{"session_id":"sess_005","user_id":1004,"device_id":"dev_e5","ip":"10.0.0.5","created_at":1717093400,"last_seen":1717093950,"expires_in":3600,"payload":{"cart":[],"roles":["admin"]}}'
+EXPIRE session:sess_005 3600
+
+JSON.SET session:sess_006 $ '{"session_id":"sess_006","user_id":1005,"device_id":"dev_f6","ip":"10.0.0.6","created_at":1717093500,"last_seen":1717094000,"expires_in":3600,"payload":{"cart":[],"roles":["user"]}}'
+EXPIRE session:sess_006 3600
+
+JSON.SET session:sess_007 $ '{"session_id":"sess_007","user_id":1006,"device_id":"dev_g7","ip":"10.0.0.7","created_at":1717093600,"last_seen":1717094100,"expires_in":3600,"payload":{"cart":[],"roles":["user"]}}'
+EXPIRE session:sess_007 3600
+
+JSON.SET session:sess_008 $ '{"session_id":"sess_008","user_id":1007,"device_id":"dev_h8","ip":"10.0.0.8","created_at":1717093700,"last_seen":1717094150,"expires_in":3600,"payload":{"cart":[],"roles":["guest"]}}'
+EXPIRE session:sess_008 3600
+
+JSON.SET session:sess_009 $ '{"session_id":"sess_009","user_id":1008,"device_id":"dev_i9","ip":"10.0.0.9","created_at":1717093800,"last_seen":1717094200,"expires_in":3600,"payload":{"cart":[],"roles":["admin"]}}'
+EXPIRE session:sess_009 3600
+
+JSON.SET session:sess_010 $ '{"session_id":"sess_010","user_id":1009,"device_id":"dev_j10","ip":"10.0.0.10","created_at":1717093900,"last_seen":1717094300,"expires_in":3600,"payload":{"cart":[],"roles":["pro"]}}'
+EXPIRE session:sess_010 3600
+
+JSON.SET session:sess_011 $ '{"session_id":"sess_011","user_id":1010,"device_id":"dev_a1","ip":"10.0.0.11","created_at":1717094000,"last_seen":1717094400,"expires_in":3600,"payload":{"cart":[],"roles":["user"]}}'
+EXPIRE session:sess_011 3600
+
+JSON.SET session:sess_012 $ '{"session_id":"sess_012","user_id":1001,"device_id":"dev_b2","ip":"10.0.0.12","created_at":1717094100,"last_seen":1717094500,"expires_in":3600,"payload":{"cart":[],"roles":["admin"]}}'
+EXPIRE session:sess_012 3600
+
+JSON.SET session:sess_013 $ '{"session_id":"sess_013","user_id":1002,"device_id":"dev_c3","ip":"10.0.0.13","created_at":1717094200,"last_seen":1717094600,"expires_in":3600,"payload":{"cart":[],"roles":["basic"]}}'
+EXPIRE session:sess_013 3600
+
+JSON.SET session:sess_014 $ '{"session_id":"sess_014","user_id":1003,"device_id":"dev_d4","ip":"10.0.0.14","created_at":1717094300,"last_seen":1717094700,"expires_in":3600,"payload":{"cart":[],"roles":["guest"]}}'
+EXPIRE session:sess_014 3600
+
+JSON.SET session:sess_015 $ '{"session_id":"sess_015","user_id":1004,"device_id":"dev_e5","ip":"10.0.0.15","created_at":1717094400,"last_seen":1717094800,"expires_in":3600,"payload":{"cart":[],"roles":["premium"]}}'
+EXPIRE session:sess_015 3600
+
+JSON.SET session:sess_016 $ '{"session_id":"sess_016","user_id":1005,"device_id":"dev_f6","ip":"10.0.0.16","created_at":1717094500,"last_seen":1717094900,"expires_in":3600,"payload":{"cart":[],"roles":["basic"]}}'
+EXPIRE session:sess_016 3600
+
+JSON.SET session:sess_017 $ '{"session_id":"sess_017","user_id":1006,"device_id":"dev_g7","ip":"10.0.0.17","created_at":1717094600,"last_seen":1717095000,"expires_in":3600,"payload":{"cart":[],"roles":["user"]}}'
+EXPIRE session:sess_017 3600
+
+JSON.SET session:sess_018 $ '{"session_id":"sess_018","user_id":1007,"device_id":"dev_h8","ip":"10.0.0.18","created_at":1717094700,"last_seen":1717095100,"expires_in":3600,"payload":{"cart":[],"roles":["free"]}}'
+EXPIRE session:sess_018 3600
+
+JSON.SET session:sess_019 $ '{"session_id":"sess_019","user_id":1008,"device_id":"dev_i9","ip":"10.0.0.19","created_at":1717094800,"last_seen":1717095200,"expires_in":3600,"payload":{"cart":[],"roles":["admin"]}}'
+EXPIRE session:sess_019 3600
+
+JSON.SET session:sess_020 $ '{"session_id":"sess_020","user_id":1009,"device_id":"dev_j10","ip":"10.0.0.20","created_at":1717094900,"last_seen":1717095300,"expires_in":3600,"payload":{"cart":[],"roles":["pro"]}}'
+EXPIRE session:sess_020 3600
+
+FT.CREATE idx:sessions ON JSON PREFIX 1 "session:" SCHEMA $.session_id AS session_id TEXT $.user_id AS user_id NUMERIC $.device_id AS device_id TEXT $.ip AS ip TEXT $.payload.roles[*] AS role TEXT $.last_seen AS last_seen NUMERIC SORTABLE
+
+

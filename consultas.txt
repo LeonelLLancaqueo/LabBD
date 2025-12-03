@@ -1,0 +1,25 @@
+
+
+Consultas con indices
+
+FT.SEARCH idx:sessions "@user_id:[1001 1001]"
+
+FT.SEARCH idx:sessions "@user_id:[1001 1001]"
+
+FT.SEARCH idx:sessions "@role:admin"
+
+FT.SEARCH idx:sessions "*" SORTBY last_seen DESC
+
+borrar todo
+FLUSH ALL 
+
+borrar un registro
+JSON.DEL user:1001
+
+//indice, ya el script de poblamiento
+FT.CREATE idx:sessions ON JSON PREFIX 1 "session:" SCHEMA $.session_id AS session_id TEXT 
+$.user_id AS user_id NUMERIC 
+$.device_id AS device_id TEXT 
+$.ip AS ip TEXT 
+$.payload.roles[*] AS role TEXT 
+$.last_seen AS last_seen NUMERIC SORTABLE
