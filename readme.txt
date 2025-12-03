@@ -1,5 +1,5 @@
 //1 clonamos el proyecto
-gitt clone https://github.com/LeonelLLancaqueo/LabBD.git
+git clone https://github.com/LeonelLLancaqueo/LabBD.git
 
 
 // ejecutamos el docker compose
